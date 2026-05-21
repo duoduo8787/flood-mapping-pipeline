@@ -1,0 +1,21 @@
+{
+  "type": "Catalog",
+  "id": "flood-mapping-pipeline-catalog",
+  "stac_version": "1.1.0",
+  "description": "STAC Catalog for the End-to-End Flood Mapping Pipeline. Covers 6 HydroBASINS watersheds in South Asia using GloFAS analogue search, Sentinel-1/2 & Landsat imagery, and EDL-based flood segmentation with uncertainty quantification.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline Catalog"
+    },
+    {
+      "rel": "child",
+      "href": "./flood-mapping-pipeline/collection.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline \u2013 South Asia"
+    }
+  ],
+  "title": "Flood Mapping Pipeline Catalog"
+}

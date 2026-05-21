@@ -1,0 +1,17 @@
+# Large data files (rebuild with scripts)
+*.zarr/
+*.tif
+*.xlsx
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+.uv/
+
+# OS
+.DS_Store
+Thumbs.db

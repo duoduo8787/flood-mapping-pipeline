@@ -1,0 +1,111 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [],
+  "id": "flood-predictions",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          68.971,
+          54.6037
+        ],
+        [
+          69.8298,
+          54.6037
+        ],
+        [
+          69.8298,
+          55.2793
+        ],
+        [
+          68.971,
+          55.2793
+        ],
+        [
+          68.971,
+          54.6037
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    68.971,
+    54.6037,
+    69.8298,
+    55.2793
+  ],
+  "properties": {
+    "title": "EDL Flood Prediction Outputs (Optical + SAR)",
+    "description": "Evidential Deep Learning (EDL) flood segmentation outputs with uncertainty quantification. Two sensor types (optical, SAR), 3 return periods, 5 analogue ranks. Dimensions: (sensor_type=2) \u00d7 (return_period=3) \u00d7 (rank=5) \u00d7 (y=2508) \u00d7 (x=3188).",
+    "datetime": "2002-04-26T00:00:00Z",
+    "end_datetime": "2025-04-11T00:00:00+00:00",
+    "model": "EDL (Evidential Deep Learning)",
+    "sensor_types": [
+      "optical",
+      "sar"
+    ],
+    "return_periods": [
+      2,
+      5,
+      10
+    ],
+    "top_k_analogues": 5,
+    "crs": "EPSG:4326",
+    "resolution_m": 30,
+    "zarr_dims": "(sensor_type=2) x (return_period=3) x (rank=5) x (y=2508) x (x=3188)",
+    "variables": [
+      "classification",
+      "water_probability",
+      "dst_uncertainty",
+      "evidence_neg",
+      "evidence_pos",
+      "aleatoric",
+      "epistemic"
+    ],
+    "chunk_shape": "(1,1,1,512,512)",
+    "pipeline_step": "Step 5"
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline Catalog"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline \u2013 South Asia"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline \u2013 South Asia"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "../flood_predictions.zarr",
+      "type": "application/vnd+zarr",
+      "title": "flood_predictions.zarr",
+      "zarr:format": 3,
+      "zarr:variables": [
+        "classification",
+        "water_probability",
+        "dst_uncertainty",
+        "evidence_neg",
+        "evidence_pos",
+        "aleatoric",
+        "epistemic"
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "flood-mapping-pipeline"
+}

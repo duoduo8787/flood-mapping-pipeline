@@ -1,0 +1,10 @@
+strategy,query,latency_ms,throughput_MBps,data_MB,chunk_shape
+A: Basin-Scale,Q1: Single Scene,7.88,4060.09,31.98,"(1, 1, 1, 512, 512)"
+A: Basin-Scale,Q2: Data Merge,41.76,3829.31,159.91,"(1, 1, 1, 512, 512)"
+A: Basin-Scale,Q3: Basin-Scale,1.05,1780.58,1.87,"(1, 1, 1, 512, 512)"
+B: Full-Temporal,Q1: Single Scene,46.89,682.09,31.98,"(2, 3, 5, 128, 128)"
+B: Full-Temporal,Q2: Data Merge,64.11,2494.45,159.91,"(2, 3, 5, 128, 128)"
+B: Full-Temporal,Q3: Basin-Scale,4.19,446.01,1.87,"(2, 3, 5, 128, 128)"
+C: Full-Scene,Q1: Single Scene,17.13,1866.61,31.98,"(1, 1, 1, 2508, 3188)"
+C: Full-Scene,Q2: Data Merge,38.09,4198.58,159.91,"(1, 1, 1, 2508, 3188)"
+C: Full-Scene,Q3: Basin-Scale,3.35,558.24,1.87,"(1, 1, 1, 2508, 3188)"

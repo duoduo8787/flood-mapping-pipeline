@@ -1,0 +1,97 @@
+{
+  "type": "Collection",
+  "id": "flood-mapping-pipeline",
+  "stac_version": "1.1.0",
+  "description": "Multi-sensor flood extent dataset for 6 HydroBASINS watersheds. Pipeline: GloFAS analogue search \u2192 satellite imagery retrieval \u2192 EDL AI segmentation \u2192 optical+SAR fusion \u2192 final flood extent map.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline Catalog"
+    },
+    {
+      "rel": "item",
+      "href": "./satellite-images/satellite-images.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./flood-predictions/flood-predictions.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./analogue-results/analogue-results.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "item",
+      "href": "./flood-extent-merged/flood-extent-merged.json",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline Catalog"
+    }
+  ],
+  "keywords": [
+    "flood",
+    "SAR",
+    "Sentinel-1",
+    "Sentinel-2",
+    "Landsat",
+    "HydroBASINS",
+    "GloFAS",
+    "EDL",
+    "uncertainty",
+    "zarr"
+  ],
+  "providers": [
+    {
+      "name": "CIE 5158 Research Team",
+      "roles": [
+        "producer"
+      ]
+    }
+  ],
+  "basin_ids": [
+    3080572620,
+    3080572630,
+    3080576250,
+    3080576260,
+    3080580980,
+    3080585700
+  ],
+  "return_periods": [
+    2,
+    5,
+    10
+  ],
+  "resolution_m": 30,
+  "crs": "EPSG:4326",
+  "title": "Flood Mapping Pipeline \u2013 South Asia",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          68.971,
+          54.6037,
+          69.8298,
+          55.2793
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2002-04-26T00:00:00Z",
+          "2025-04-11T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary"
+}

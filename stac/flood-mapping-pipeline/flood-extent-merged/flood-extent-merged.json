@@ -1,0 +1,100 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [],
+  "id": "flood-extent-merged",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          68.971,
+          54.6037
+        ],
+        [
+          69.8298,
+          54.6037
+        ],
+        [
+          69.8298,
+          55.2793
+        ],
+        [
+          68.971,
+          55.2793
+        ],
+        [
+          68.971,
+          54.6037
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    68.971,
+    54.6037,
+    69.8298,
+    55.2793
+  ],
+  "properties": {
+    "title": "Merged Flood Extent Map (Final Output)",
+    "description": "Final flood extent map produced by uncertainty-weighted fusion of optical and SAR EDL outputs. Provides water probability, binary classification, and combined uncertainty per return period and analogue rank. Dimensions: (return_period=3) \u00d7 (rank=5) \u00d7 (y=2508) \u00d7 (x=3188).",
+    "datetime": "2002-04-26T00:00:00Z",
+    "end_datetime": "2025-04-11T00:00:00+00:00",
+    "fusion_method": "uncertainty-weighted average (1/dst_uncertainty)",
+    "th_water": 0.5,
+    "return_periods": [
+      2,
+      5,
+      10
+    ],
+    "top_k_analogues": 5,
+    "crs": "EPSG:4326",
+    "resolution_m": 30,
+    "zarr_dims": "(return_period=3) x (rank=5) x (y=2508) x (x=3188)",
+    "variables": [
+      "water_probability",
+      "classification",
+      "uncertainty"
+    ],
+    "chunk_shape": "(1,1,512,512)",
+    "pipeline_step": "Step 6 \u2013 Data Merge (Final Output)"
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline Catalog"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline \u2013 South Asia"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Flood Mapping Pipeline \u2013 South Asia"
+    }
+  ],
+  "assets": {
+    "data": {
+      "href": "../flood_extent_merged.zarr",
+      "type": "application/vnd+zarr",
+      "title": "flood_extent_merged.zarr",
+      "zarr:format": 3,
+      "zarr:variables": [
+        "water_probability",
+        "classification",
+        "uncertainty"
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "collection": "flood-mapping-pipeline"
+}
